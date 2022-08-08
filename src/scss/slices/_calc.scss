@@ -1,0 +1,92 @@
+.calc {
+	background: $light;
+	border-radius: 1rem;
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+	height: calc(100vh - 10rem);
+	left: 50%;
+	position: fixed;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: clamp(10rem, 90%, 30rem);
+	&-display {
+		background: rgba(0, 0, 0, 0.1);
+		border-radius: 0.5rem;
+		border: 2px solid $dark;
+		height: calc(20% - 2rem);
+		margin: 2rem auto;
+		width: 90%;
+		font-size: 2em;
+		overflow: hidden;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	&-overlay {
+		width: 95%;
+		height: 80%;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		flex-direction: column;
+		overflow: hidden;
+		&__container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 100%;
+			&:nth-child(1) {
+				color: rgba(0, 0, 0, 0.2);
+			}
+		}
+		&__operator {
+			width: 10%;
+		}
+		&__text {
+			width: 90%;
+			text-align: right;
+		}
+	}
+	&-container {
+		border-radius: 0.5rem;
+		display: grid;
+		gap: 1rem;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: repeat(5, 1fr);
+		height: calc(80% - 3em);
+		margin: 2rem auto 1rem;
+		width: 90%;
+	}
+	&-btn {
+		border-radius: 1rem;
+		color: $light;
+		cursor: pointer;
+		display: grid;
+		font-size: 2rem;
+		height: 100%;
+		place-items: center;
+		transition: all 0.2s ease;
+		user-select: none;
+		width: 100%;
+		border: none;
+		&:enabled:hover {
+			background: darken($dark, 0.1%);
+			transition: all 0.2s ease;
+		}
+		&:disabled {
+			background: rgba(0, 0, 0, 0.2);
+			cursor: not-allowed;
+		}
+		&.md {
+			grid-column: 1 / 3;
+		}
+		&__special {
+			background: $primary;
+		}
+		&__number {
+			background: $secondary;
+		}
+		&__operator {
+			background: $accent;
+		}
+	}
+}

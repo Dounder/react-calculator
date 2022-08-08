@@ -1,0 +1,16 @@
+@import './slices/variables';
+@import './slices/mixins';
+@import './slices/calc';
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	background: $dark;
+	font-family: consolas, monospace;
+}
+
+p {
+	margin: 0;
+}
